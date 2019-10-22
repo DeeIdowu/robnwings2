@@ -1,0 +1,27 @@
+/*background/body segment*/
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: #fff;
+}
+
+h2 {
+  color: black;
+  text-align: center;
+  font-size: 45px;
+  font-family: "Rickon Regular";
+}
+
+ul {
+  text-align: center;
+}
+
+li {
+  text-align: center;
+  margin-left: 45%;
+  margin-right: 55%;
+}
