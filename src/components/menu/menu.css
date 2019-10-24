@@ -3,6 +3,29 @@ h3 {
   text-align: center;
 }
 
+/*menu content*/
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 5px 0;
+  max-width: 100%;
+}
+
+.newColumns {
+  flex: 1;
+  margin: 2px;
+  padding: 10px;
+}
+
+.newColumns:first-child {
+  margin: left 0;
+}
+
+.newColumns:last-child {
+  margin: right 0;
+}
+
 .link-contact:link {
   color: black;
 }
