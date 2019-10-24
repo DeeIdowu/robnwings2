@@ -35,7 +35,7 @@ export default function Testimonials() {
         </Carousel.Item>
         <Carousel.Item>
           <p style={{ fontStyle: italic, paddingBottom: 25, paddingTop: 10 }}>
-            "I only have two words... <b>SOUTH, SIDE!</b>"
+            "I only have two words... <b>SOUTH-SIDE!</b>"
           </p>
         </Carousel.Item>
       </Carousel>

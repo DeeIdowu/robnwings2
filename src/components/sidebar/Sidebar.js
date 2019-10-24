@@ -9,7 +9,7 @@ class SideBar extends React.Component {
   render() {
     return (
       <Menu>
-        <a className="menu-item" href="/">
+        <a className="menu-item" href="/home">
           Home
         </a>
         <a className="menu-item" href="/menu">

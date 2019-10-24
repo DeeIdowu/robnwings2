@@ -45,7 +45,7 @@ export default function About() {
               color: "white"
             }}
           >
-            South Side Fries
+            South-Side Fries
           </h3>
         </Carousel.Caption>
       </Carousel.Item>
@@ -85,7 +85,7 @@ export default function About() {
               color: "black"
             }}
           >
-            South Side Wings
+            South-Side Wings
           </h3>
         </Carousel.Caption>
       </Carousel.Item>

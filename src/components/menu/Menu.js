@@ -71,7 +71,7 @@ function Menu() {
             For further inquiries, bookings and purchasing of services/bottled
             goods inquire{" "}
             <Link to="/contact" className="link-contact">
-              <b>here</b>
+              <b style={{ color: "red" }}>here</b>
             </Link>{" "}
           </p>
         </div>
