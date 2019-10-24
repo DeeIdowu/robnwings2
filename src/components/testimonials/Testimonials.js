@@ -2,7 +2,7 @@ import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import { italic } from "ansi-colors";
 
-export default function About() {
+export default function Testimonials() {
   return (
     <div id="testimonials">
       <h1 style={{ fontSize: 45 }}>Testimonials</h1>
