@@ -2,34 +2,6 @@
   width: 100%;
   padding: 10px 0 20px 0;
   background-color: #b22222;
-  background-image: -moz-linear-gradient(
-    bottom,
-    #b22222 0%,
-    #dc143c 0.27%,
-    #ff0000 99.46%,
-    #fff 100%
-  );
-  background-image: -o-linear-gradient(
-    bottom,
-    #b22222 0%,
-    #dc143c 0.27%,
-    #ff0000 99.46%,
-    #fff 100%
-  );
-  background-image: -webkit-linear-gradient(
-    bottom,
-    #b22222 0%,
-    #dc143c 0.27%,
-    #ff0000 99.46%,
-    #fff 100%
-  );
-  background-image: linear-gradient(
-    bottom,
-    #b22222 0%,
-    #dc143c 0.27%,
-    #ff0000 99.46%,
-    #fff 100%
-  );
 }
 
 .mission-title {

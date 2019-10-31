@@ -1,10 +1,9 @@
 import React from "react";
-import { BrowserRouter as Route, Link } from "react-router-dom";
+import { BrowserRouter as Route } from "react-router-dom";
 import MenuCarousel from "../menu-carousel/MenuCarousel";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import "./menu.css";
-import { black } from "ansi-colors";
 
 function Menu() {
   return (
@@ -70,9 +69,9 @@ function Menu() {
           <p>
             For further inquiries, bookings and purchasing of services/bottled
             goods inquire{" "}
-            <Link to="/contact" className="link-contact">
+            <a href="/contact" className="link-contact">
               <b style={{ color: "red" }}>here</b>
-            </Link>{" "}
+            </a>
           </p>
         </div>
       </div>
