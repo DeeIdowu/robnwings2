@@ -11,12 +11,11 @@ function Header() {
         <img
           className="photo"
           src={Logo}
-          alt="RobNWings header"
-          class="center"
+          alt="RobNWings"
           height={100}
           width={100}
           border-radius={3}
-          border-color="red;"
+          border-color="red"
         />
       </div>
     </div>

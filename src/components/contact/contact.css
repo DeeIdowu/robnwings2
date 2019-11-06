@@ -46,3 +46,8 @@ input[type="text"] {
   border-style: solid;
   border-width: 1px;
 }
+
+.submit-button {
+  background-color: red;
+  color: white;
+}

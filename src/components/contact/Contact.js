@@ -74,7 +74,12 @@ class Contact extends React.Component {
           <textarea className="textarea"></textarea>
           <br></br>
           <br></br>
-          <input id="Submit" type="submit" value="Submit"></input>
+          <input
+            className="submit-button"
+            id="Submit"
+            type="submit"
+            value="Submit"
+          ></input>
 
           {this.state.emailSent === true && alert("E-mail sent, Thank you!!!")}
           {this.state.emailSent === false &&
