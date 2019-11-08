@@ -16,8 +16,6 @@ class Contact extends React.Component {
   }
   //handling change
   handleChange = event => {
-    console.log(event);
-
     const target = event.target;
     const name = target.name;
     const email = target.email;
@@ -29,6 +27,15 @@ class Contact extends React.Component {
       [email]: target,
       [subject]: target,
       [message]: target
+    });
+  };
+  //handling the submitting of the form
+  handleSubmit = event => {
+    event.preventDefault(); //prevention of refreshing the page
+
+    this.setState({
+      disabled: true, //disable the ability to send an email more than once
+      emailSent: false
     });
   };
 
