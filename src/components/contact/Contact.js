@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
+import Axios from "axios";
 import "./contact.css";
 
 class Contact extends React.Component {
@@ -11,32 +12,51 @@ class Contact extends React.Component {
       email: "",
       subject: "",
       message: "",
+      disabled: false,
       emailSent: null
     };
   }
-  //handling change
   handleChange = event => {
     const target = event.target;
+    const value = target.type === "checkbox" ? target.checked : target.value;
     const name = target.name;
-    const email = target.email;
-    const subject = target.subject;
-    const message = target.message;
 
     this.setState({
-      [name]: target,
-      [email]: target,
-      [subject]: target,
-      [message]: target
+      [name]: value
     });
   };
-  //handling the submitting of the form
+
   handleSubmit = event => {
-    event.preventDefault(); //prevention of refreshing the page
+    event.preventDefault();
+
+    console.log(event.target);
 
     this.setState({
-      disabled: true, //disable the ability to send an email more than once
-      emailSent: false
+      disabled: true
     });
+
+    Axios.post("http://localhost:3030/api/email", this.state)
+      .then(res => {
+        if (res.data.success) {
+          this.setState({
+            disabled: false,
+            emailSent: true
+          });
+        } else {
+          this.setState({
+            disabled: false,
+            emailSent: false
+          });
+        }
+      })
+      .catch(err => {
+        console.log(err);
+
+        this.setState({
+          disabled: false,
+          emailSent: false
+        });
+      });
   };
 
   render() {
@@ -86,11 +106,15 @@ class Contact extends React.Component {
             id="Submit"
             type="submit"
             value="Submit"
+            disabled={this.state.disabled}
           ></input>
 
-          {this.state.emailSent === true && alert("E-mail sent, Thank you!!!")}
-          {this.state.emailSent === false &&
-            alert("Error, E-mail did not send!!")}
+          {this.state.emailSent === true && (
+            <p className="d-inline success-msg">Email Sent</p>
+          )}
+          {this.state.emailSent === false && (
+            <p className="d-inline err-msg">Email Not Sent</p>
+          )}
         </form>
         <br></br>
         <br></br>
