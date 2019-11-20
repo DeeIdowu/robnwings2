@@ -109,6 +109,7 @@ class Contact extends React.Component {
             disabled={this.state.disabled}
           ></input>
 
+          <br></br>
           {this.state.emailSent === true && (
             <p className="d-inline success-msg">Email Sent</p>
           )}
