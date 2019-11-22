@@ -1,39 +1,38 @@
 import React from "react";
 import Header from "../header/Header";
+import { Form, FormGroup, Input, Label, Button } from "reactstrap";
 import Footer from "../footer/Footer";
+import axios from "axios";
 import "./contact.css";
 
 class Contact extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       name: "",
       email: "",
-      subject: "",
-      message: "",
-      disabled: false,
-      emailSent: null
+      message: ""
     };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
-  handleChange = event => {
-    const target = event.target;
-    const value = target.type === "checkbox" ? target.checked : target.value;
-    const name = target.name;
 
-    this.setState({
-      [name]: value
-    });
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
   };
 
-  handleSubmit = event => {
-    event.preventDefault();
+  async handleSubmit(e) {
+    e.preventDefault();
 
-    console.log(event.target);
+    const { name, email, message } = this.state;
 
-    this.setState({
-      disabled: true
+    const form = await axios.post("/api/form", {
+      name,
+      email,
+      message
     });
-  };
+  }
 
   render() {
     return (
@@ -42,57 +41,32 @@ class Contact extends React.Component {
         <br></br>
         <br></br>
         <h1>Contact Us:</h1>
-        <form onSubmit={this.handleSubmit} className="contact-form">
-          <label
-            className="name"
-            value={this.state.name}
-            onChange={this.handleChange}
-          >
-            Name: <input type="text"></input>
-          </label>
-          <br></br>
-          <br></br>
-          <label
-            className="email"
-            value={this.state.email}
-            onChange={this.handleChange}
-          >
-            Email: <input type="text"></input>
-          </label>
-          <br></br>
-          <br></br>
-          <label
-            className="subject"
-            value={this.state.subject}
-            onChange={this.handleChange}
-          >
-            Subject: <input type="text"></input>
-          </label>
-          <br></br>
-          <br></br>
-          <label value={this.state.message} onChange={this.handleChange}>
-            Message:
-          </label>
-          <br></br>
-          <textarea className="textarea"></textarea>
-          <br></br>
-          <br></br>
-          <input
-            className="submit-button"
-            id="Submit"
-            type="submit"
-            value="Submit"
-            disabled={this.state.disabled}
-          ></input>
+        <Form onSubmit={this.handleSubmit}>
+          <FormGroup>
+            <Label for="name">Name:</Label>
+            <Input type="text" name="name" onChange={this.handleChange}></Input>
+          </FormGroup>
 
-          <br></br>
-          {this.state.emailSent === true && (
-            <p className="d-inline success-msg">Email Sent</p>
-          )}
-          {this.state.emailSent === false && (
-            <p className="d-inline err-msg">Email Not Sent</p>
-          )}
-        </form>
+          <FormGroup>
+            <Label for="email">E-mail:</Label>
+            <Input
+              type="email"
+              name="email"
+              onChange={this.handleChange}
+            ></Input>
+          </FormGroup>
+
+          <FormGroup>
+            <Label for="message">Message:</Label>
+            <Input
+              type="textarea"
+              name="message"
+              onChange={this.handleChange}
+            ></Input>
+          </FormGroup>
+
+          <Button>Submit</Button>
+        </Form>
         <br></br>
         <br></br>
         <Footer />
