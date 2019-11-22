@@ -31,10 +31,10 @@ app.post("/api/form", (req, res) => {
     });
 
     let mailOptions = {
-      from: "newinqury@gmail.com",
-      to: "thesublimedee@gmail.com",
-      replyTo: "newinqury@gmail.com",
-      subject: "New Inqury",
+      from: "newinquiry@gmail.com",
+      to: "contactrobnwings@gmail.com",
+      replyTo: "newinquiry@gmail.com",
+      subject: "New Inquiry",
       text: req.body.message,
       html: htmlEmail
     };
