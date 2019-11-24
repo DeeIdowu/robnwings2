@@ -23,8 +23,6 @@ class Contact extends React.Component {
   };
 
   async handleSubmit(e) {
-    e.preventDefault();
-
     const { name, email, message } = this.state;
 
     const form = await axios.post("/api/form", {
@@ -32,6 +30,7 @@ class Contact extends React.Component {
       email,
       message
     });
+    alert("Thank you for your submission/inquiry");
   }
 
   render() {
@@ -44,14 +43,18 @@ class Contact extends React.Component {
         <Form onSubmit={this.handleSubmit}>
           <FormGroup>
             <Label for="name">Name:</Label>
-            <Input type="text" name="name" onChange={this.handleChange}></Input>
+            <Input
+              type="text"
+              name={this.state.name}
+              onChange={this.handleChange}
+            ></Input>
           </FormGroup>
 
           <FormGroup>
             <Label for="email">E-mail:</Label>
             <Input
               type="email"
-              name="email"
+              name={this.state.email}
               onChange={this.handleChange}
             ></Input>
           </FormGroup>
@@ -60,13 +63,16 @@ class Contact extends React.Component {
             <Label for="message">Message:</Label>
             <Input
               type="textarea"
-              name="message"
+              name={this.state.message}
               onChange={this.handleChange}
             ></Input>
           </FormGroup>
 
-          <Button>Submit</Button>
+          <Button type="submit" onClick={this.handleSubmit}>
+            Submit
+          </Button>
         </Form>
+
         <br></br>
         <br></br>
         <Footer />
