@@ -11,7 +11,11 @@ class Contact extends React.Component {
     this.state = {
       name: "",
       email: "",
-      message: ""
+      message: "",
+      formErrors: {
+        name: "",
+        email: ""
+      }
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -30,7 +34,6 @@ class Contact extends React.Component {
       email,
       message
     });
-    alert("Thank you for your submission/inquiry");
   }
 
   render() {
@@ -40,6 +43,15 @@ class Contact extends React.Component {
         <br></br>
         <br></br>
         <h1>Contact Us:</h1>
+        <p>
+          Below submit your name, email, inquiry or order with quantities listed
+          in Menu. Also leave a phone number to get back to you as soon as
+          possible.
+          <br></br>
+          <br></br>
+          Kind Regards, RobNWings
+        </p>
+        <br></br>
         <Form onSubmit={this.handleSubmit}>
           <FormGroup>
             <Label for="name">Name:</Label>
@@ -47,6 +59,7 @@ class Contact extends React.Component {
               type="text"
               name={this.state.name}
               onChange={this.handleChange}
+              required
             ></Input>
           </FormGroup>
 
@@ -56,6 +69,7 @@ class Contact extends React.Component {
               type="email"
               name={this.state.email}
               onChange={this.handleChange}
+              required
             ></Input>
           </FormGroup>
 
