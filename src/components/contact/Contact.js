@@ -12,10 +12,8 @@ class Contact extends React.Component {
       name: "",
       email: "",
       message: "",
-      formErrors: {
-        name: "",
-        email: ""
-      }
+      disabled: false,
+      emailSent: null
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -27,12 +25,14 @@ class Contact extends React.Component {
   };
 
   async handleSubmit(e) {
-    const { name, email, message } = this.state;
+    const { name, email, message, disabled, emailSent } = this.state;
 
     const form = await axios.post("/api/form", {
       name,
       email,
-      message
+      message,
+      disabled,
+      emailSent
     });
   }
 
@@ -44,9 +44,9 @@ class Contact extends React.Component {
         <br></br>
         <h1>Contact Us:</h1>
         <p>
-          Below submit your name, email, inquiry or order with quantities listed
-          in Menu. Also leave a phone number to get back to you as soon as
-          possible.
+          Below submit your name, email, inquiry or order bottled sauces or
+          quantities of food listed in Menu. Also leave a phone number to get
+          back to you as soon as possible.
           <br></br>
           <br></br>
           Kind Regards, RobNWings

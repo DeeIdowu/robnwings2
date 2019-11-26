@@ -42,5 +42,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "\"React webpage\"",
+  "main": "index.js",
+  "repository": "git@github.com:DeeIdowu/robnwings2.git",
+  "author": "Dee Idowu",
+  "license": "MIT"
 }
