@@ -53,7 +53,7 @@ class Contact extends React.Component {
             <Label for="name">Name:</Label>
             <Input
               type="text"
-              name={this.state.name}
+              name="name"
               onChange={this.handleChange}
               required
             ></Input>
@@ -63,7 +63,7 @@ class Contact extends React.Component {
             <Label for="email">E-mail:</Label>
             <Input
               type="email"
-              name={this.state.email}
+              name="email"
               onChange={this.handleChange}
               required
             ></Input>
@@ -73,7 +73,7 @@ class Contact extends React.Component {
             <Label for="message">Message:</Label>
             <Input
               type="textarea"
-              name={this.state.message}
+              name="message"
               onChange={this.handleChange}
             ></Input>
           </FormGroup>
