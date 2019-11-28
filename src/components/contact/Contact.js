@@ -11,9 +11,7 @@ class Contact extends React.Component {
     this.state = {
       name: "",
       email: "",
-      message: "",
-      disabled: false,
-      emailSent: null
+      message: ""
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -25,14 +23,12 @@ class Contact extends React.Component {
   };
 
   async handleSubmit(e) {
-    const { name, email, message, disabled, emailSent } = this.state;
+    const { name, email, message } = this.state;
 
     const form = await axios.post("/api/form", {
       name,
       email,
-      message,
-      disabled,
-      emailSent
+      message
     });
   }
 
@@ -82,9 +78,7 @@ class Contact extends React.Component {
             ></Input>
           </FormGroup>
 
-          <Button type="submit" onClick={this.handleSubmit}>
-            Submit
-          </Button>
+          <Button type="submit">Submit</Button>
         </Form>
 
         <br></br>

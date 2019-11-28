@@ -21,9 +21,8 @@ app.post("/api/form", (req, res) => {
       <p>${req.body.message}</p>
         `;
     let transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
+      host: "smtp.ethereal.email",
       port: 587,
-      secure: false,
       auth: {
         user: process.env.user,
         pass: process.env.pass
@@ -32,12 +31,13 @@ app.post("/api/form", (req, res) => {
 
     let mailOptions = {
       from: "newinquiry@gmail.com",
-      to: "contactrobnwings@gmail.com",
+      to: "timmothy.larkin23@ethereal.email",
       replyTo: "newinquiry@gmail.com",
       subject: "New Inquiry",
       text: req.body.message,
       html: htmlEmail
     };
+
     transporter.sendMail(mailOptions, (err, info) => {
       if (err) {
         return console.log(err);
