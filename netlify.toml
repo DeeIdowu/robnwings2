@@ -1,6 +1,6 @@
 [build]
-base= "robnwings2"
-publish = "robnwings2/build/"
+base= "public"
+publish = "public"
 command = "yarn build"
 
 [[redirects]]
