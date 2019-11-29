@@ -8,15 +8,4 @@ from = "/*"
 to ="/home"
 status = 200
 
-from = "/*"
-to ="/menu"
-status = 200
-
-from = "/*"
-to ="/contact"
-status = 200
-
-
-
-
-
+ 
