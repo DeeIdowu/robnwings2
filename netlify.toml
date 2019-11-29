@@ -5,14 +5,10 @@ base = "robnwings2"
 
 [[redirects]]
 from = "/*"
-to "/home.html"
+to ="/home"
+to = "/menu"
+to = "/contact"
 status = 200
 
-from = "/*"
-to "/menu.html"
-status = 200
 
-from = "/*"
-to "/contact.html"
-status = 200
 
