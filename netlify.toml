@@ -1,0 +1,18 @@
+[build]
+command = "npm run build"
+publish = "robnwings2/build-output/"
+base = "robnwings2"
+
+[[redirects]]
+from = "/*"
+to "/home.html"
+status = 200
+
+from = "/*"
+to "/menu.html"
+status = 200
+
+from = "/*"
+to "/contact.html"
+status = 200
+
