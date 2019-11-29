@@ -1,0 +1,9 @@
+[build]
+base= "robnwings2"
+publish = "robnwings2/build/"
+command = "yarn build"
+
+[[redirects]]
+from = "*/"
+to = "/index.html"
+status = 200
