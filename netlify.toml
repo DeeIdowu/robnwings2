@@ -6,9 +6,17 @@ base = "robnwings2"
 [[redirects]]
 from = "/*"
 to ="/home"
-to = "/menu"
-to = "/contact"
 status = 200
+
+from = "/*"
+to ="/menu"
+status = 200
+
+from = "/*"
+to ="/contact"
+status = 200
+
+
 
 
 
