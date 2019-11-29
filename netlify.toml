@@ -1,6 +1,6 @@
 [build]
 command = "npm run build"
-publish = "robnwings2/build-output/"
+publish = "/build-output/"
 base = "robnwings2"
 
 [[redirects]]
